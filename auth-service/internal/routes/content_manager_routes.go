@@ -17,7 +17,7 @@ func RegisterContentManagerRoutes(app *fiber.App, db *gorm.DB, cfg *config.Confi
 	cmGroup := app.Group("/api/v1/content-managers",
 		middleware.AuthMiddleware(cfg),
 		middleware.SessionMiddleware(cfg),
-		middleware.RequireRole("ADMIN"), // ✔ NOW VALID
+		middleware.RequireRole("INSTITUTION"), // ✔ NOW VALID
 		middleware.AuditMiddleware(cfg),
 	)
 
